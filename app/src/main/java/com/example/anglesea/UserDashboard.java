@@ -66,7 +66,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         AngleseaAPI angleseaAPI = retrofit.create(AngleseaAPI.class);
 
-        Call<List<StaffData>> call = AngleseaAPI.getStaffData();
+        Call<List<StaffData>> call = angleseaAPI.getStaffData();
 
         call.enqueue(new Callback<List<StaffData>>() {
             @Override

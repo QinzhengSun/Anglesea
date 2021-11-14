@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,8 +21,15 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class AddShiftPage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class AddShiftPage extends AppCompatActivity{
     //Initialize Variable time
     TextView tv_time;
     boolean[] selectedTime;
@@ -40,14 +48,60 @@ public class AddShiftPage extends AppCompatActivity implements NavigationView.On
     ArrayList<Integer> staffList = new ArrayList<>();
     String[] staffArray = {"Jenna Sanchez", "Sophie Smith", "Kate Guetermann", "Verica Wong"};
 
-    private TextView mTextViewResult;
+    private TextView TextViewResult;
     private RequestQueue mQueue;
     private DrawerLayout drawer;
+    private Button AdminDashboard;
+public class AddShift {
 
+}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_shifit_activity);
+
+        TextViewResult = findViewById(R.id.tv_staff);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://myjson.dit.upm.es/api/bins/2lwl/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        AngleseaAPI angleseaAPI = retrofit.create(AngleseaAPI.class);
+
+        Call<List<StaffData>> call = angleseaAPI.getStaffData();
+
+        call.enqueue(new Callback<List<StaffData>>() {
+                         @Override
+                         public void onResponse(Call<List<StaffData>> call, Response<List<StaffData>> response) {
+
+                             if (!response.isSuccessful()) {
+                                 TextViewResult.setText("Code: " + response.code());
+                                 return;
+                             }
+                             List<StaffData> staffData = response.body();
+
+                             for (com.example.anglesea.StaffData StaffData : staffData) {
+                                 String content = "";
+                                 content += "name" + StaffData.getFirst_name() + "\n";
+
+
+                                 TextViewResult.append(content);
+
+                             }
+                         }
+
+                         @Override
+                         public void onFailure(Call<List<StaffData>> call, Throwable t) {
+                             TextViewResult.setText(t.getMessage());
+                         }
+
+
+                     });
+
+
+
+
 
 
 
@@ -255,11 +309,25 @@ public class AddShiftPage extends AppCompatActivity implements NavigationView.On
                     }
                 });
                 builder.show();
+
+                AdminDashboard = findViewById(R.id.AdminDashboard);
+                AdminDashboard.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AddShiftPage.this, UserDashboard.class);
+                        startActivity(intent);
+
+                    }
+                });
             }
+
         });
 
 
+
+
 //-------------------------------------------------------------------------------------------------------------
+        /*
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         drawer=findViewById(R.id.drawer_layout);//set your drawerLayout id in the xml and change here
@@ -275,11 +343,14 @@ public class AddShiftPage extends AppCompatActivity implements NavigationView.On
 
 
         toggle.syncState();
+
+         */
 //-----------------------------------------------------------------------------------------------------------------
     }
 
 
 //--------------------------------------------------------------------------------------------------------------
+    /*
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -294,15 +365,15 @@ public class AddShiftPage extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()){
             case R.id.profile:
-                Intent in1 = new Intent(this,UserDashboard.class);
+                Intent in1 = new Intent(this, UserDashboard.class);
                 startActivity(in1);
                 break;
             case R.id.history:
-                Intent in2 = new Intent(this,HistoryPage.class);
+                Intent in2 = new Intent(this, HistoryPage.class);
                 startActivity(in2);
                 break;
             case R.id.help:
-                Intent in =new Intent(this,HelpPage.class);
+                Intent in =new Intent(this, HelpPage.class);
                 startActivity(in);
                 break;
 
@@ -312,7 +383,7 @@ public class AddShiftPage extends AppCompatActivity implements NavigationView.On
     }
 
 
-
+*/
 //--------
 //------------------------------------------------------------------------------------------------------
 }

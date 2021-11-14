@@ -25,18 +25,18 @@ public class AddStaff extends AppCompatActivity implements NavigationView.OnNavi
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         drawer=findViewById(R.id.add_staff_drawer_layout);//set your drawerLayout id in the xml and change here
-
-        ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this,drawer,toolbar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close);
-
-        drawer.addDrawerListener(toggle);
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-
-        toggle.syncState();
+//
+//        ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this,drawer,toolbar,
+//                R.string.navigation_drawer_open,
+//                R.string.navigation_drawer_close);
+//
+//        drawer.addDrawerListener(toggle);
+//
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
+//
+//
+//        toggle.syncState();
     }
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -49,29 +49,29 @@ public class AddStaff extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-
-        switch (menuItem.getItemId()){
-            case R.id.profile:
-                Intent in1 = new Intent(this,UserDashboard.class);
-                startActivity(in1);
-                break;
-            case R.id.history:
-                Intent in2 = new Intent(this,HistoryPage.class);
-                startActivity(in2);
-                break;
-            case R.id.help:
-                Intent in =new Intent(this,HelpPage.class);
-                startActivity(in);
-                break;
-
-        }
-        drawer.closeDrawer(GravityCompat.START);
+//
+//        switch (menuItem.getItemId()){
+//            case R.id.profile:
+//                Intent in1 = new Intent(this,UserDashboard.class);
+//                startActivity(in1);
+//                break;
+//            case R.id.history:
+//                Intent in2 = new Intent(this,HistoryPage.class);
+//                startActivity(in2);
+//                break;
+//            case R.id.help:
+//                Intent in =new Intent(this,HelpPage.class);
+//                startActivity(in);
+//                break;
+//
+//        }
+//        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mainmenu,menu);
+//        getMenuInflater().inflate(R.menu.mainmenu,menu);
         return true;
     }
 }
