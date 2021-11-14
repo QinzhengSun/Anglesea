@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout_history"
     android:fitsSystemWindows="false"
-    tools:openDrawer=".start"
+    tools:openDrawer="start"
     tools:context=".HistoryPage">
 
 
@@ -37,6 +37,10 @@
                 android:textStyle="bold" />
 
         </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/relative_history"
@@ -102,6 +106,7 @@
 
 
         </RelativeLayout>
+        </ScrollView>
 
 
     </LinearLayout>
