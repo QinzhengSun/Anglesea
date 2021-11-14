@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout_history"
     android:fitsSystemWindows="false"
-    tools:openDrawer="start"
+    tools:openDrawer=".start"
     tools:context=".HistoryPage">
 
 
@@ -48,10 +48,57 @@
         <include
             android:id="@+id/shifts_history_view"
             layout="@layout/shift_history_gridview"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/tool_bar"
             android:layout_width="wrap_content"
             tools:ignore="NotSibling" />
+
+            <include
+                android:id="@+id/shifts_history_view2"
+                layout="@layout/shift_history_gridview"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shifts_history_view"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="NotSibling" />
+
+            <include
+                android:id="@+id/shifts_history_view3"
+                layout="@layout/shift_history_gridview"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shifts_history_view2"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="NotSibling" />
+
+            <include
+                android:id="@+id/shifts_history_view4"
+                layout="@layout/shift_history_gridview"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shifts_history_view3"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="NotSibling" />
+
+            <include
+                android:id="@+id/shifts_history_view5"
+                layout="@layout/shift_history_gridview"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shifts_history_view4"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="NotSibling" />
+
+            <include
+                android:id="@+id/shifts_history_view6"
+                layout="@layout/shift_history_gridview"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shifts_history_view5"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="NotSibling" />
+
+
 
 
         </RelativeLayout>
