@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_person"
+            android:title="Profile" />
+
+        <item android:id="@+id/history"
+            android:title="Shifts History"
+            android:icon="@drawable/ic_time"
+            />
+        <item android:id="@+id/help"
+            android:title="Help"
+            android:icon="@drawable/ic_help"
+            />
+
+    </group>
+
+</menu>

@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+         android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_shape"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/cv_staff_info_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="JENNA SANCHEZ"
+                    android:gravity="start"
+                    android:textSize="20dp"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:paddingBottom="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/cv_staff_info_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_below="@+id/cv_staff_info_name"
+                    android:text="Jan, 01 1990" />
+
+                <TextView
+                    android:id="@+id/cv_staff_info_role"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:layout_below="@+id/cv_staff_info_dob"
+                    android:text="Registered Nurse" />
+                <TextView
+                    android:id="@+id/cv_staff_info_id_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="10291"
+                    android:layout_below="@+id/cv_staff_info_role"/>
+
+                <ImageView
+                    android:id="@+id/cv_staff_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/cv_staff_info_dob"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_staff_image_round"
+
+                    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

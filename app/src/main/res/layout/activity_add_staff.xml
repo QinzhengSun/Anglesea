@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/add_staff_drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:context=".AddStaff"
+    tools:openDrawer="start"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            app:title=" "
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:elevation="4dp"
+            android:background="#000000"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddStaff">
+
+    <RelativeLayout
+        android:id="@+id/topRl"
+       android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/label"
+            android:textColor="@color/black"
+            android:textAllCaps="true"
+            android:text="Welcome Admin"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <EditText
+            android:padding="10dp"
+            android:hint="Search staff..."
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/searchshape"
+            android:id="@+id/sesarchEt"
+            android:layout_toRightOf="@id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/topRl"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_above="@+id/bLl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+
+            android:textColor="@color/black"
+            android:textAllCaps="true"
+            android:text="Add new staff"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+        <EditText
+            android:padding="10dp"
+            android:hint="First Name"
+           android:layout_marginTop="10dp"
+            android:background="@drawable/inputshape"
+            android:id="@+id/fnameEt"
+            android:layout_toRightOf="@id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <EditText
+            android:padding="10dp"
+            android:hint="Last Name"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputshape"
+            android:id="@+id/lnameEt"
+            android:layout_toRightOf="@id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <EditText
+            android:padding="10dp"
+            android:hint="Phone"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputshape"
+            android:id="@+id/phoneEt"
+            android:layout_toRightOf="@id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <EditText
+            android:padding="10dp"
+            android:hint="Staff Code"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputshape"
+            android:id="@+id/codeEt"
+            android:layout_toRightOf="@id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <EditText
+             android:gravity="start"
+            android:padding="10dp"
+            android:hint="Other notes, if any."
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputshape"
+            android:id="@+id/notesEt"
+            android:layout_toRightOf="@id/label"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+        </EditText>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bLl"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="Add Staff"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:background="#E34C4C"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_margin="5dp"
+            android:text="Cancel"
+            android:textSize="18sp"
+            android:background="#9C9696"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+        app:itemTextColor="#FFFFFF"
+        app:itemIconTint="#FFFFFF"
+        android:backgroundTint="#000000"
+        app:headerLayout="@layout/head_layout"
+        app:menu="@menu/menu_draw"
+        android:background="#FFFFFF"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>
