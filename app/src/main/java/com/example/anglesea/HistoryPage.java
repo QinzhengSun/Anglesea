@@ -33,8 +33,7 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
 
     private DrawerLayout drawer;
 
-    private TextView mTextViewResult;
-    private RequestQueue mQueue;
+
 
 
     @Override
@@ -42,10 +41,6 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextViewResult = findViewById(R.id.text_view_result);
-
-
-        mQueue = Volley.newRequestQueue(this);
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         drawer=findViewById(R.id.drawer_layout_history);//set your drawerLayout id in the xml and change here
@@ -93,39 +88,5 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    private void jsonParse() {
-        String url = "http://myjson.dit.upm.es/api/bins/2zpt";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("shifts");
-
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject shift = jsonArray.getJSONObject(i);
-
-                                String date = shift.getString("date");
-                                String clock_in = shift.getString("clockin");
-                                String clock_out = shift.getString("clockout");
-
-                                mTextViewResult.append(date + "\n                    " + clock_in + "\n                    " + clock_out + "\n\n");
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-
-        mQueue.add(request);
-    }
-
 
 }
