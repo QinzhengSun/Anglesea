@@ -19,7 +19,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddStaff"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity"
+           ></activity>
         <activity android:name=".AddShiftPage"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".AdmainProfile"

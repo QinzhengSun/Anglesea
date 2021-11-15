@@ -195,10 +195,11 @@ public class LoginActivity extends BaseActivity {
                 if (temp.equals(mypwd)) {
                     ToastUtil.showToast(LoginActivity.this, " The password is correct and the login is successful ");
                     startActivity(new Intent(LoginActivity.this, AdmainProfile.class));
-                } else if(temp.equals(userpwd)){
+                }else if(temp.equals(userpwd)) {
                     ToastUtil.showToast(LoginActivity.this, " The password is correct and the login is successful ");
-                    startActivity(new Intent(LoginActivity.this,UserDashboard.class));
-                } else {
+                    startActivity(new Intent(LoginActivity.this, UserDashboard.class));
+                }else
+                {
                     ToastUtil.showToast(LoginActivity.this, " Password error ");
                 }
 
@@ -323,7 +324,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     public void onAuthenticated() {
-        Intent intent = new Intent(this, AdmainProfile.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
